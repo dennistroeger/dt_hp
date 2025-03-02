@@ -11,8 +11,20 @@ client.setApiKey(SENDGRID_API_KEY);
 
 export const POST: APIRoute = async ({ request }) => {
   try {
-    const data = await request.formData();
-    const email = data.get("email");
+    let email;
+    
+    // Check content type to determine how to parse the request
+    const contentType = request.headers.get('content-type') || '';
+    
+    if (contentType.includes('application/json')) {
+      // Handle JSON data
+      const json = await request.json();
+      email = json.email;
+    } else {
+      // Handle form data
+      const data = await request.formData();
+      email = data.get("email");
+    }
 
     // Validate email
     if (!email || typeof email !== "string") {
