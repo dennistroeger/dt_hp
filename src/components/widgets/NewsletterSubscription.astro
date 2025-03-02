@@ -20,15 +20,15 @@ export interface Props {
 }
 
 const {
-  title = 'LifeNotes',
+  title = 'Decoded Insights',
   subtitle = 'Subscribe to',
-  tagline = 'I share actionable productivity tips, practical life advice, and high-quality insights from across the web, directly to your inbox.',
-  subscriberCount = '260,000 friendly readers',
+  tagline = 'Get actionable insights on wealth building, personal growth, and AI implementation. I decode complex systems into simple solutions you can apply immediately.',
+  subscriberCount = '200 friendly readers',
   reviewCount = '200+ reviews',
-  inputPlaceholder = 'Enter your email address',
+  inputPlaceholder = 'Your most beautiful email',
   submitText = 'Subscribe',
-  disclaimer = "By submitting this form, you'll be signed up to my free newsletter. I may also send you other emails about my courses. You can opt-out at any time. For more information, see our",
-  privacyPolicyLink = '#',
+  disclaimer = "By submitting this form, you'll receive my free newsletter with insights on financial literacy, systems thinking, and personal development. You can opt-out at any time. For more information, see our",
+  privacyPolicyLink = '/privacy',
   privacyPolicyText = 'privacy policy',
   classes = {},
   accentColor = '#7A4EFF',
@@ -189,9 +189,6 @@ const {
 
           <form id="newsletter-form" class="space-y-4">
             <div>
-              <label for="newsletter-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                >Your email</label
-              >
               <input
                 type="email"
                 id="newsletter-email"
