@@ -2,15 +2,12 @@ export const prerender = false; // Enable on-demand rendering
 import type { APIRoute } from "astro";
 import client from "@sendgrid/client";
 
-// Initialize SendGrid client with API key
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
-if (!SENDGRID_API_KEY) {
-  throw new Error("SENDGRID_API_KEY environment variable is not set");
-}
-client.setApiKey(SENDGRID_API_KEY);
+// Set SendGrid API key
+const SENDGRID_API_KEY = import.meta.env.SENDGRID_API_KEY || "";
+const LIST_ID = import.meta.env.SENDGRID_LIST_ID || "";
 
-// List ID to add subscribers to
-const LIST_ID = "5e0ce347-a96d-4e43-b283-7b9a96cc1a71";
+// Initialize SendGrid client
+client.setApiKey(SENDGRID_API_KEY);
 
 export const POST: APIRoute = async ({ request }) => {
   try {
