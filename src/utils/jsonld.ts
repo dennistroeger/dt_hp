@@ -16,7 +16,7 @@ export function createBlogPostJsonLd(
   url: string,
   image: ImageMetadata | string | undefined,
   siteName: string = 'Dennis Tröger',
-  logoUrl: string = 'favicon.svg'
+  logoUrl: string = 'favicon.ico'
 ) {
   return {
     '@context': 'https://schema.org',
@@ -63,7 +63,7 @@ export function createBlogListingJsonLd(
   title: string = 'Systems Decoded Blog',
   description: string = 'My passion is to decode complex systems into simple solutions.',
   siteName: string = 'Dennis Tröger',
-  logoUrl: string = 'favicon.svg'
+  logoUrl: string = 'favicon.ico'
 ) {
   return {
     '@context': 'https://schema.org',
@@ -102,7 +102,7 @@ export function createWebsiteJsonLd(
   url: string,
   name: string = 'Dennis Tröger',
   description: string = 'My passion is to decode complex systems into simple solutions.',
-  logoUrl: string = 'favicon.svg'
+  logoUrl: string = 'favicon.ico'
 ) {
   return {
     '@context': 'https://schema.org',
