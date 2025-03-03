@@ -33,11 +33,14 @@ import '@fontsource-variable/inter';
     --aw-color-text-default: rgb(0 0 0);
     --aw-color-text-muted: rgb(0 0 0);
     --aw-color-bg-page: rgb(255 255 255);
+    --aw-color-ul: rgb(0 0 0);
+    --aw-color-li: rgb(51 51 51);
 
     --aw-color-bg-page-dark: rgb(3 6 32);
 
     ::selection {
-      background-color: lavender;
+      background-color: #37f3ca;
+      color: black;
     }
   }
 
@@ -54,10 +57,20 @@ import '@fontsource-variable/inter';
     --aw-color-text-default: rgb(255 255 255);
     --aw-color-text-muted: #ffffff;
     --aw-color-bg-page: rgb(3 6 32);
+    --aw-color-ul: rgb(255 255 255);
+    --aw-color-li: rgb(229 229 229);
 
     ::selection {
-      background-color: black;
-      color: snow;
+      background-color: #37f3ca;
+      color: black;
     }
+  }
+
+  ul {
+    color: var(--aw-color-ul);
+  }
+
+  li {
+    color: var(--aw-color-li);
   }
 </style>
