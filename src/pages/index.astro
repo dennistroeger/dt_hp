@@ -10,27 +10,27 @@ import { getCanonical } from '~/utils/permalinks';
 import { createWebsiteJsonLd } from '~/utils/jsonld';
 
 const metadata = {
-  title: 'Dennis Decodes Systems',
+  title: 'Unfix Yourself - Dennis Tröger',
   description:
-    'Discover how to master financial literacy, build wealth, and navigate complex systems with practical insights.',
+    'Skip the gurus and decode the chaos. Raw, no-nonsense insights for entrepreneurs and career switchers who want to live authentically.',
   keywords:
-    'personal development, AI, wealth, financial literacy, systems thinking, money management, entrepreneurship, angel investing',
+    'unfix yourself, anti-self-help, entrepreneurship, career change, limiting beliefs, authentic living, resilience, mindset, radical mediocrity',
   author: 'Dennis Tröger',
-  ogTitle: 'I decode systems',
+  ogTitle: "Unfix Yourself - Life's Too Short for Fake Fixes",
   ogDescription:
-    'Transform complexity into clarity with actionable insights on wealth building, personal growth, and AI implementation from Dennis Tröger, SaaS founder and systems thinker.',
+    "I'm Dennis—a biologist turned SaaS founder helping entrepreneurs and career switchers ditch limiting beliefs and build authentic lives. No fluff, just real lessons from my falls and fights.",
   ogImage: 'assets/images/feature_images/image_11.png',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'I decode systems',
+  twitterTitle: "Unfix Yourself - Life's Too Short for Fake Fixes",
   twitterDescription:
-    'Transform complexity into clarity with actionable insights on wealth building, personal growth, and AI implementation from Dennis Tröger, SaaS founder and systems thinker.',
+    "I'm Dennis—a biologist turned SaaS founder helping entrepreneurs and career switchers ditch limiting beliefs and build authentic lives. No fluff, just real lessons from my falls and fights.",
   twitterImage: 'assets/images/feature_images/image_11.png',
   ignoreTitleTemplate: true,
 };
 
 // Create JSON-LD structured data for the website
 const url = getCanonical(Astro.url.pathname);
-const jsonLd = createWebsiteJsonLd(url.toString(), 'Dennis Tröger - Systems Decoded', metadata.description);
+const jsonLd = createWebsiteJsonLd(url.toString(), 'Dennis Tröger - Unfix Yourself', metadata.description);
 ---
 
 <Layout metadata={metadata}>
@@ -43,7 +43,7 @@ const jsonLd = createWebsiteJsonLd(url.toString(), 'Dennis Tröger - Systems Dec
     actions={[
       {
         variant: 'primary',
-        text: 'Start Exploring',
+        text: 'Unfix Your Life',
         href: '/blog',
         target: '_blank',
         icon: 'tabler:arrow-right',
@@ -52,33 +52,37 @@ const jsonLd = createWebsiteJsonLd(url.toString(), 'Dennis Tröger - Systems Dec
     image={{ src: '~/assets/images/Dennis Troeger.png', alt: 'Dennis Tröger' }}
   >
     <Fragment slot="title">
-      Decode <span class="text-accent dark:text-accent highlight"> your </span>life.
+      Unfix <span class="text-accent dark:text-accent highlight"> Yourself</span>—Life's Too Short for Fake Fixes
     </Fragment>
 
     <Fragment slot="subtitle">
       <span>
-        Feeling stuck, scattered, or overwhelmed? <br />
-        <br /> You're not alone. I'm Dennis—and I'll help you unlock clarity, purpose, and profit by decoding the hidden
-        systems shaping your life: mindset, money, personal growth, and AI for your business. <br /><br />
-        No fluff. Just raw lessons from my wins (and wrecks) as a biologist turned SaaS founder and polymath explorer—so
-        you can cut through the chaos and thrive.
+        Stuck, scattered, or just fed up with the grind? <br />
+        <br /> I'm Dennis—a biologist turned SaaS founder who spent 20 years chasing "perfect" until I saw the self-help
+        game for what it is: a pile of noise. Now I help entrepreneurs and career switchers like you drop the lies—"you're
+        not enough," "work harder"—and decode the mess of mindset, money, and growth. <br /><br />
+        No magic tricks, just dark, honest lessons from my falls and fights—so you can stop tweaking and start living before
+        it's over.
         <br /><br />
-        Ready for your breakthrough?
+        Ready to ditch the guru nonsense?
       </span>
     </Fragment>
   </Hero2>
   <!-- Note Widget ******************* -->
 
   <Note title="My Philosophy">
-    <p>The world is a complex place, and I decode it into simple solutions.</p>
+    <p>
+      Life's a messy numbers game. Success isn't about perfect plans or constant fixing—it's about resilience,
+      alignment, and action. Decode the chaos, live your way—skip the gurus.
+    </p>
   </Note>
 
   <!-- Blog Roll ******************* -->
 
   <BlogLatestPosts
     id="blog"
-    title="Explore my insightful articles on my blog"
-    information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
+    title="Raw Insights Without the Fluff"
+    information={`No 3-step programs or quick fixes here. Just honest takes on ditching limiting beliefs, aligning with your inner nature, and building a life or business that doesn't drain you—profit included, hustle not required.`}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -86,6 +90,6 @@ const jsonLd = createWebsiteJsonLd(url.toString(), 'Dennis Tröger - Systems Dec
   </BlogLatestPosts>
 
   <div class="flex justify-center mb-12 mt-12">
-    <Button href="/blog" class="transition-transform duration-300 hover:scale-105">Read Blog</Button>
+    <Button href="/blog" class="transition-transform duration-300 hover:scale-105">Read Raw Truths</Button>
   </div>
 </Layout>
