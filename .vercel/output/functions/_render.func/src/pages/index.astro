@@ -1,0 +1,91 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Note from '~/components/widgets/Note.astro';
+import Button from '~/components/ui/Button.astro';
+
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { getCanonical } from '~/utils/permalinks';
+import { createWebsiteJsonLd } from '~/utils/jsonld';
+
+const metadata = {
+  title: 'Dennis Decodes Systems',
+  description:
+    'Discover how to master financial literacy, build wealth, and navigate complex systems with practical insights.',
+  keywords:
+    'personal development, AI, wealth, financial literacy, systems thinking, money management, entrepreneurship, angel investing',
+  author: 'Dennis Tröger',
+  ogTitle: 'I decode systems',
+  ogDescription:
+    'Transform complexity into clarity with actionable insights on wealth building, personal growth, and AI implementation from Dennis Tröger, SaaS founder and systems thinker.',
+  ogImage: 'assets/images/feature_images/image_11.png',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'I decode systems',
+  twitterDescription:
+    'Transform complexity into clarity with actionable insights on wealth building, personal growth, and AI implementation from Dennis Tröger, SaaS founder and systems thinker.',
+  twitterImage: 'assets/images/feature_images/image_11.png',
+  ignoreTitleTemplate: true,
+};
+
+// Create JSON-LD structured data for the website
+const url = getCanonical(Astro.url.pathname);
+const jsonLd = createWebsiteJsonLd(url.toString(), 'Dennis Tröger - Systems Decoded', metadata.description);
+---
+
+<Layout metadata={metadata}>
+  <!-- Add JSON-LD structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <!-- Hero Widget ******************* -->
+
+  <Hero2
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start Exploring',
+        href: '/blog',
+        target: '_blank',
+        icon: 'tabler:arrow-right',
+      },
+    ]}
+    image={{ src: '~/assets/images/Dennis Troeger.png', alt: 'Dennis Tröger' }}
+  >
+    <Fragment slot="title">
+      Decode <span class="text-accent dark:text-accent highlight"> your </span>life.
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span>
+        Feeling stuck, scattered, or overwhelmed? <br />
+        <br /> You're not alone. I'm Dennis—and I'll help you unlock clarity, purpose, and profit by decoding the hidden
+        systems shaping your life: mindset, money, personal growth, and AI for your business. <br /><br />
+        No fluff. Just raw lessons from my wins (and wrecks) as a biologist turned SaaS founder and polymath explorer—so
+        you can cut through the chaos and thrive.
+        <br /><br />
+        Ready for your breakthrough?
+      </span>
+    </Fragment>
+  </Hero2>
+  <!-- Note Widget ******************* -->
+
+  <Note title="My Philosophy">
+    <p>The world is a complex place, and I decode it into simple solutions.</p>
+  </Note>
+
+  <!-- Blog Roll ******************* -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Explore my insightful articles on my blog"
+    information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+
+  <div class="flex justify-center mb-12 mt-12">
+    <Button href="/blog" class="transition-transform duration-300 hover:scale-105">Read Blog</Button>
+  </div>
+</Layout>

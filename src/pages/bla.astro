@@ -1,0 +1,972 @@
+---
+// Dennis's Personal Brand Website - Anti-Design Approach
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dennis | Unfix Yourself</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-bg: #ffffff;
+        --color-text: #121212;
+        --color-accent1: #ff3e3e;
+        --color-accent2: #00c853;
+        --color-accent3: #2979ff;
+        --color-light-bg: #f5f5f5;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Space Mono', monospace;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        padding: 2rem 0;
+        position: relative;
+        background-color: var(--color-light-bg);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .logo {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 2rem;
+        color: var(--color-text);
+        text-decoration: none;
+        position: relative;
+        z-index: 2;
+      }
+
+      .logo::after {
+        content: '';
+        position: absolute;
+        width: 110%;
+        height: 10px;
+        background-color: var(--color-accent1);
+        bottom: 5px;
+        left: -5px;
+        z-index: -1;
+        transform: rotate(-2deg);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: var(--color-text);
+        text-decoration: none;
+        font-size: 1.1rem;
+        position: relative;
+        transition: color 0.3s;
+        font-weight: bold;
+      }
+
+      .nav-links a:hover {
+        color: var(--color-accent1);
+      }
+
+      .nav-links a::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--color-accent1);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s;
+      }
+
+      .nav-links a:hover::before {
+        transform: scaleX(1);
+      }
+
+      .hero {
+        padding: 6rem 0;
+        position: relative;
+        background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color: var(--color-accent3);
+        opacity: 0.1;
+        border-radius: 50%;
+        top: -100px;
+        left: -150px;
+        z-index: 0;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .tagline {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 1.4rem;
+        color: var(--color-accent2);
+        margin-bottom: 1.5rem;
+        transform: rotate(-1deg);
+        display: inline-block;
+      }
+
+      h1 {
+        font-size: 4.5rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      h1 span {
+        color: var(--color-accent1);
+        position: relative;
+        display: inline-block;
+      }
+
+      h1 span::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 15px;
+        background-color: var(--color-accent1);
+        bottom: 5px;
+        left: 0;
+        z-index: -1;
+        opacity: 0.3;
+      }
+
+      .subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 2.5rem;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1.2rem 2.5rem;
+        background-color: var(--color-accent1);
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        font-family: 'Space Mono', monospace;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: transform 0.3s;
+        font-size: 1.1rem;
+        border-radius: 4px;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-5px);
+      }
+
+      .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        z-index: -1;
+      }
+
+      .cta-button:hover::before {
+        transform: translateX(0);
+      }
+
+      .book-section {
+        margin: 8rem 0;
+        position: relative;
+        padding: 4rem 0;
+        background-color: var(--color-light-bg);
+      }
+
+      .book-section::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(41, 121, 255, 0.05);
+        transform: skewY(-2deg);
+        z-index: 0;
+      }
+
+      .book-container {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .book-content {
+        text-align: center;
+      }
+
+      .book-content h2 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .book-content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        color: var(--color-accent1);
+      }
+
+      .book-content h2::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        background-color: var(--color-accent2);
+        bottom: 5px;
+        left: 0;
+        z-index: -1;
+        opacity: 0.3;
+      }
+
+      .book-pitch {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+        position: relative;
+        background-color: white;
+        padding: 2rem;
+        border-left: 5px solid var(--color-accent1);
+        text-align: left;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .book-pitch::before {
+        content: ''
+          ";
+        font-family: 'Permanent Marker', cursive;
+        font-size: 5rem;
+        position: absolute;
+        top: -40px;
+        left: -30px;
+        color: var(--color-accent1);
+        opacity: 0.2;
+      }
+      
+      .book-pitch::after {
+        content: "
+          '';
+        font-family: 'Permanent Marker', cursive;
+        font-size: 5rem;
+        position: absolute;
+        bottom: -80px;
+        right: -30px;
+        color: var(--color-accent1);
+        opacity: 0.2;
+      }
+
+      .philosophy-section {
+        margin: 8rem 0;
+      }
+
+      .philosophy-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+      }
+
+      .philosophy-header h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+        position: relative;
+      }
+
+      .philosophy-header h2::after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 10px;
+        background-color: var(--color-accent3);
+        bottom: 5px;
+        left: 25%;
+        z-index: -1;
+        opacity: 0.3;
+      }
+
+      .philosophy-header p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .philosophy-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .philosophy-card {
+        background-color: white;
+        padding: 2.5rem;
+        border-left: 5px solid var(--color-accent1);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .philosophy-card:nth-child(2) {
+        border-left-color: var(--color-accent2);
+        transform: translateY(20px);
+      }
+
+      .philosophy-card:nth-child(3) {
+        border-left-color: var(--color-accent3);
+        transform: translateY(-20px);
+      }
+
+      .philosophy-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .philosophy-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: var(--color-text);
+      }
+
+      .philosophy-card p {
+        font-size: 1.2rem;
+        color: var(--color-text);
+      }
+
+      .philosophy-card::before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(0, 0, 0, 0.03);
+        border-radius: 50%;
+        top: -50px;
+        right: -50px;
+      }
+
+      .cta-section {
+        margin: 8rem 0;
+        text-align: center;
+        position: relative;
+        padding: 4rem 0;
+        background-color: var(--color-light-bg);
+      }
+
+      .cta-section::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 62, 62, 0.05);
+        transform: skewY(2deg);
+        z-index: 0;
+      }
+
+      .cta-section h2 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-section p {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      footer {
+        padding: 4rem 0;
+        background-color: var(--color-light-bg);
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer::before {
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color: var(--color-accent1);
+        opacity: 0.05;
+        border-radius: 50%;
+        bottom: -150px;
+        right: -150px;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .footer-logo {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 1.5rem;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+
+      .footer-text {
+        max-width: 300px;
+        font-size: 1rem;
+        color: var(--color-text);
+      }
+
+      .footer-links h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: var(--color-text);
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-links a {
+        color: var(--color-text);
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1.1rem;
+      }
+
+      .footer-links a:hover {
+        color: var(--color-accent2);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 3rem;
+        font-size: 1rem;
+        color: rgba(18, 18, 18, 0.7);
+      }
+
+      /* Glitch effect - more subtle */
+      .glitch {
+        position: relative;
+      }
+
+      .glitch::before,
+      .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+      }
+
+      .glitch::before {
+        left: 2px;
+        text-shadow: -1px 0 var(--color-accent2);
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim 8s infinite linear alternate-reverse;
+      }
+
+      .glitch::after {
+        left: -2px;
+        text-shadow: -1px 0 var(--color-accent1);
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim2 8s infinite linear alternate-reverse;
+      }
+
+      @keyframes glitch-anim {
+        0% {
+          clip: rect(31px, 9999px, 94px, 0);
+        }
+        5% {
+          clip: rect(70px, 9999px, 71px, 0);
+        }
+        10% {
+          clip: rect(29px, 9999px, 83px, 0);
+        }
+        15% {
+          clip: rect(16px, 9999px, 91px, 0);
+        }
+        20% {
+          clip: rect(2px, 9999px, 23px, 0);
+        }
+        25% {
+          clip: rect(60px, 9999px, 73px, 0);
+        }
+        30% {
+          clip: rect(14px, 9999px, 56px, 0);
+        }
+        35% {
+          clip: rect(89px, 9999px, 25px, 0);
+        }
+        40% {
+          clip: rect(32px, 9999px, 26px, 0);
+        }
+        45% {
+          clip: rect(67px, 9999px, 96px, 0);
+        }
+        50% {
+          clip: rect(7px, 9999px, 13px, 0);
+        }
+        55% {
+          clip: rect(14px, 9999px, 97px, 0);
+        }
+        60% {
+          clip: rect(63px, 9999px, 17px, 0);
+        }
+        65% {
+          clip: rect(1px, 9999px, 94px, 0);
+        }
+        70% {
+          clip: rect(41px, 9999px, 12px, 0);
+        }
+        75% {
+          clip: rect(32px, 9999px, 23px, 0);
+        }
+        80% {
+          clip: rect(83px, 9999px, 35px, 0);
+        }
+        85% {
+          clip: rect(83px, 9999px, 73px, 0);
+        }
+        90% {
+          clip: rect(18px, 9999px, 23px, 0);
+        }
+        95% {
+          clip: rect(59px, 9999px, 27px, 0);
+        }
+        100% {
+          clip: rect(83px, 9999px, 43px, 0);
+        }
+      }
+
+      @keyframes glitch-anim2 {
+        0% {
+          clip: rect(65px, 9999px, 119px, 0);
+        }
+        5% {
+          clip: rect(133px, 9999px, 166px, 0);
+        }
+        10% {
+          clip: rect(121px, 9999px, 154px, 0);
+        }
+        15% {
+          clip: rect(66px, 9999px, 128px, 0);
+        }
+        20% {
+          clip: rect(24px, 9999px, 153px, 0);
+        }
+        25% {
+          clip: rect(132px, 9999px, 151px, 0);
+        }
+        30% {
+          clip: rect(3px, 9999px, 76px, 0);
+        }
+        35% {
+          clip: rect(134px, 9999px, 25px, 0);
+        }
+        40% {
+          clip: rect(36px, 9999px, 86px, 0);
+        }
+        45% {
+          clip: rect(131px, 9999px, 39px, 0);
+        }
+        50% {
+          clip: rect(72px, 9999px, 123px, 0);
+        }
+        55% {
+          clip: rect(42px, 9999px, 97px, 0);
+        }
+        60% {
+          clip: rect(120px, 9999px, 34px, 0);
+        }
+        65% {
+          clip: rect(116px, 9999px, 32px, 0);
+        }
+        70% {
+          clip: rect(60px, 9999px, 12px, 0);
+        }
+        75% {
+          clip: rect(102px, 9999px, 66px, 0);
+        }
+        80% {
+          clip: rect(15px, 9999px, 113px, 0);
+        }
+        85% {
+          clip: rect(130px, 9999px, 17px, 0);
+        }
+        90% {
+          clip: rect(32px, 9999px, 126px, 0);
+        }
+        95% {
+          clip: rect(109px, 9999px, 139px, 0);
+        }
+        100% {
+          clip: rect(44px, 9999px, 173px, 0);
+        }
+      }
+
+      /* Form styling */
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 2.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 1;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--color-text);
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 1rem;
+        background-color: var(--color-light-bg);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--color-text);
+        font-family: 'Space Mono', monospace;
+        font-size: 1rem;
+      }
+
+      .form-textarea {
+        width: 100%;
+        padding: 1rem;
+        background-color: var(--color-light-bg);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--color-text);
+        font-family: 'Space Mono', monospace;
+        font-size: 1rem;
+        min-height: 150px;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 992px) {
+        .hero {
+          padding: 4rem 0;
+        }
+
+        h1 {
+          font-size: 3.5rem;
+        }
+
+        .subtitle {
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.8rem;
+        }
+
+        .tagline {
+          font-size: 1.2rem;
+        }
+
+        .subtitle {
+          font-size: 1.1rem;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-menu-button {
+          display: block;
+        }
+
+        .philosophy-card:nth-child(2),
+        .philosophy-card:nth-child(3) {
+          transform: translateY(0);
+        }
+
+        .book-content h2 {
+          font-size: 2.5rem;
+        }
+
+        .book-content h3 {
+          font-size: 1.5rem;
+        }
+
+        .book-pitch {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="#" class="logo">Dennis</a>
+          <div class="nav-links">
+            <a href="#book">Book</a>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <span class="tagline">Decode the Chaos, Live Your Way—Skip the Gurus.</span>
+            <h1 class="glitch" data-text="Unfix Yourself">
+              <span>Unfix</span> Yourself
+            </h1>
+            <p class="subtitle">
+              Life's too short for fake fixes. Stop chasing 3-step programs that don't work. Build a life that's
+              authentically yours—flaws included.
+            </p>
+            <a href="#book" class="cta-button">Get The Book</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="book" class="book-section">
+        <div class="container">
+          <div class="book-container">
+            <div class="book-content">
+              <h2>Unfix Yourself</h2>
+              <h3>Why 3-Step Programs Won't Fix You</h3>
+              <div class="book-pitch">
+                <p>
+                  "I'm Dennis—a biologist turned SaaS founder who spent 20 years chasing 'perfect' until I saw through
+                  the self-help scam. This book's my take-down of 3-step fixes. It's for entrepreneurs and career
+                  switchers who feel stuck or broken—you're not. Unfix yourself: drop the lies, decode your mess, and
+                  build something real before time's up. No fluff—just dark, honest lessons from my falls and fights."
+                </p>
+              </div>
+              <a href="#" class="cta-button">Pre-Order Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="philosophy" class="philosophy-section">
+        <div class="container">
+          <div class="philosophy-header">
+            <h2>My Philosophy</h2>
+            <p>
+              Life's a messy numbers game—unpredictable and tough. Success isn't about perfect plans or constant fixing.
+            </p>
+          </div>
+          <div class="philosophy-grid">
+            <div class="philosophy-card">
+              <h3>Know Your Nature</h3>
+              <p>
+                Everyone has an inner nature (DNA, experiences, drives)—figure it out, don't fake it. Stop trying to be
+                someone you're not.
+              </p>
+            </div>
+            <div class="philosophy-card">
+              <h3>Kill Limiting Beliefs</h3>
+              <p>
+                Limiting beliefs ("I'm not enough," "I can't compete") kill more dreams than money woes—get rid of them.
+                They're just stories you tell yourself.
+              </p>
+            </div>
+            <div class="philosophy-card">
+              <h3>Embrace Imperfection</h3>
+              <p>
+                Stop chasing perfection; live your way, flaws included, and keep moving forward. Success isn't about
+                doing everything; it's about doing what you love.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="cta-section">
+        <div class="container">
+          <h2>About Dennis</h2>
+          <p>
+            I'm a 39-year-old German ex-biologist turned SaaS founder with a raw, no-nonsense approach to helping people
+            decode life's chaos. After 20 years shifting from molecular biology to SaaS, I've learned that success isn't
+            about perfect plans—it's about resilience, alignment, and action.
+          </p>
+          <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+      </section>
+
+      <section id="contact" class="book-section">
+        <div class="container">
+          <div class="philosophy-header">
+            <h2>Let's Connect</h2>
+            <p>Have questions? Want to work together? Just want to say hi? Reach out.</p>
+          </div>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" rows="5" class="form-textarea"></textarea>
+            </div>
+            <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <div class="footer-logo">Dennis</div>
+            <p class="footer-text">
+              Helping entrepreneurs and career switchers ditch limiting beliefs, align with their inner nature, and
+              build lives that don't drain them.
+            </p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#book">Book</a></li>
+              <li><a href="#philosophy">Philosophy</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>Connect</h3>
+            <ul>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Email</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          &copy; {new Date().getFullYear()} Dennis. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Glitch effect on hover
+      document.querySelector('.glitch').addEventListener('mouseover', function () {
+        this.classList.add('active');
+      });
+
+      document.querySelector('.glitch').addEventListener('mouseout', function () {
+        this.classList.remove('active');
+      });
+
+      // Scroll animation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+          });
+        });
+      });
+
+      // Reveal animations on scroll
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.philosophy-card, .book-image, .hero-content').forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

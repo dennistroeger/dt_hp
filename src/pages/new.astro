@@ -1,0 +1,373 @@
+import Layout from '~/layouts/Layout.astro'; import {Icon} from 'astro-icon/components'; const title = "Unfix Yourself -
+Life's Too Short for Fake Fixes"; const description = "Honest lessons to ditch the self-help noise, decode your chaos,
+and live your way.";
+
+<Layout metadata={{ title, description }}>
+  <main class="overflow-hidden">
+    <!-- Anti-Design Hero Section with Asymmetrical Layout -->
+    <section class="relative min-h-screen bg-black text-white overflow-hidden">
+      <!-- Chaotic Background Elements -->
+      <div class="absolute top-[15%] left-[10%] w-32 h-32 bg-purple-600 rounded-full opacity-30 blur-xl"></div>
+      <div class="absolute top-[45%] right-[20%] w-48 h-48 bg-yellow-400 rounded-full opacity-20 blur-xl"></div>
+      <div class="absolute bottom-[25%] left-[30%] w-64 h-64 bg-red-500 rounded-full opacity-25 blur-xl"></div>
+
+      <!-- Glitchy Text Effect -->
+      <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+        <div
+          class="text-[200px] font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 to-purple-600 opacity-10"
+        >
+          CHAOS
+        </div>
+      </div>
+
+      <!-- Main Content with Intentional Misalignment -->
+      <div class="container mx-auto px-4 pt-32 pb-20 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <!-- Asymmetrical Header -->
+          <div class="md:col-span-7 md:col-start-2">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-none tracking-tight">
+              <span class="block transform -rotate-2 text-yellow-400">UNFIX</span>
+              <span class="block transform rotate-1 ml-12">YOURSELF</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-medium max-w-2xl ml-4 md:ml-20 transform rotate-1 text-gray-300">
+              Life's too short for fake fixes.
+            </p>
+          </div>
+
+          <!-- Intentionally Misplaced Subheader -->
+          <div class="md:col-span-5 md:col-start-6 mt-12 md:mt-0">
+            <p class="text-lg md:text-xl font-medium border-l-4 border-red-500 pl-4 transform -rotate-1">
+              Honest lessons to ditch the self-help noise, decode your chaos, and live your way.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chaotic CTA Section -->
+        <div class="mt-16 md:mt-32 grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div class="md:col-span-6 md:col-start-4">
+            <div class="bg-white/10 backdrop-blur-sm p-8 rounded-lg transform rotate-1 border border-white/20">
+              <h2 class="text-3xl font-bold mb-4 text-yellow-400">Skip the Gurus</h2>
+              <p class="text-lg mb-6">
+                I'm Dennis—a biologist turned SaaS founder who spent 20 years chasing 'perfect' until I saw through the
+                self-help scam.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a
+                  href="#about"
+                  class="inline-block px-6 py-3 bg-red-500 text-white font-bold rounded-md transform hover:rotate-2 transition-transform"
+                >
+                  My Story
+                </a>
+                <a
+                  href="#book"
+                  class="inline-block px-6 py-3 bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold rounded-md transform hover:-rotate-2 transition-transform"
+                >
+                  The Book
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+        <span class="text-sm text-gray-400 mb-2">Scroll to Decode</span>
+        <Icon name="tabler:arrow-down" class="w-6 h-6 animate-bounce text-gray-400" />
+      </div>
+    </section>
+
+    <!-- Philosophy Section with Clashing Elements -->
+    <section id="about" class="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+          <!-- Intentionally Offset Header -->
+          <div class="md:col-span-10 md:col-start-2">
+            <h2
+              class="text-4xl md:text-5xl font-black mb-12 inline-block transform -rotate-1 border-b-4 border-purple-600 pb-2"
+            >
+              Life's a Messy Numbers Game
+            </h2>
+          </div>
+
+          <!-- Philosophy Cards with Clashing Colors -->
+          <div class="md:col-span-4 md:col-start-2">
+            <div class="bg-purple-700 p-8 rounded-lg transform -rotate-2 h-full">
+              <h3 class="text-2xl font-bold mb-4 text-yellow-300">Find Your Inner Nature</h3>
+              <p class="text-lg">
+                Everyone has an inner nature (DNA, experiences, drives)—figure it out, don't fake it.
+              </p>
+            </div>
+          </div>
+
+          <div class="md:col-span-4">
+            <div class="bg-red-600 p-8 rounded-lg transform rotate-1 h-full mt-8 md:mt-12">
+              <h3 class="text-2xl font-bold mb-4 text-cyan-300">Kill Limiting Beliefs</h3>
+              <p class="text-lg">
+                "I'm not enough," "I can't compete" kill more dreams than money woes—get rid of them.
+              </p>
+            </div>
+          </div>
+
+          <div class="md:col-span-4">
+            <div class="bg-yellow-600 p-8 rounded-lg transform -rotate-1 h-full mt-8 md:mt-4">
+              <h3 class="text-2xl font-bold mb-4 text-gray-900">Embrace Imperfection</h3>
+              <p class="text-lg text-gray-900">
+                Stop chasing perfection; live your way, flaws included, and keep moving forward.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anti-Hustle Section with Overlapping Elements -->
+    <section class="py-20 bg-gray-900 text-white relative overflow-hidden">
+      <!-- Overlapping Background Elements -->
+      <div class="absolute top-0 left-0 w-full h-full">
+        <div class="absolute top-[20%] left-[15%] w-64 h-64 bg-purple-800 rounded-full opacity-20 blur-xl"></div>
+        <div class="absolute bottom-[30%] right-[10%] w-80 h-80 bg-red-700 rounded-full opacity-15 blur-xl"></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div class="md:col-span-6 md:col-start-2">
+            <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">
+              <span class="block text-red-500 transform -rotate-1">Anti-Hustle</span>
+              <span class="block text-yellow-400 ml-12">Radical Mediocrity</span>
+            </h2>
+
+            <p class="text-xl mb-8 max-w-2xl">
+              Success isn't about doing everything; it's about doing what you love without breaking yourself.
+            </p>
+
+            <div class="bg-white/5 backdrop-blur-sm p-8 rounded-lg border border-white/10 transform -rotate-1">
+              <blockquote class="text-2xl italic font-medium text-gray-300">
+                "Stop wasting time on fixes—build a life or business that's yours, not some guru's script."
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 md:col-start-7 mt-12 md:mt-24">
+            <div
+              class="bg-gradient-to-br from-gray-800 to-black p-8 rounded-lg border border-white/10 transform rotate-1"
+            >
+              <h3 class="text-2xl font-bold mb-6 text-purple-400">Who This Is For:</h3>
+
+              <div class="mb-8">
+                <h4 class="text-xl font-bold mb-2 text-yellow-400">Mid-Level Entrepreneurs & Solopreneurs</h4>
+                <p class="text-gray-300">
+                  Self-employed or small business owners earning 50k-200k EUR/year who feel stuck, overwhelmed, or
+                  burned out.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-bold mb-2 text-yellow-400">Career Switchers</h4>
+                <p class="text-gray-300">
+                  Mid-to-senior pros earning 80k-200k EUR/year tired of corporate life, dreaming of their own business.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book Section with Asymmetrical Layout -->
+    <section id="book" class="py-20 bg-black text-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+          <div class="md:col-span-6 md:col-start-2">
+            <div class="relative">
+              <!-- Fake Book Cover with Anti-Design Elements -->
+              <div
+                class="aspect-[2/3] max-w-md bg-gradient-to-br from-red-600 via-purple-700 to-yellow-500 rounded-lg shadow-2xl transform -rotate-3 overflow-hidden"
+              >
+                <div class="absolute inset-0 p-8 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-3xl font-black mb-2">UNFIX</h3>
+                    <h3 class="text-4xl font-black mb-4">YOURSELF</h3>
+                    <p class="text-xl font-bold">Why 3-Step Programs Won't Fix You</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-2xl font-black">DENNIS TROEGER</p>
+                  </div>
+                </div>
+
+                <!-- Chaotic Design Elements -->
+                <div
+                  class="absolute top-1/4 left-1/4 w-32 h-32 bg-yellow-300 rounded-full opacity-30 mix-blend-overlay"
+                >
+                </div>
+                <div
+                  class="absolute bottom-1/3 right-1/4 w-40 h-40 bg-purple-500 rounded-full opacity-40 mix-blend-overlay"
+                >
+                </div>
+              </div>
+
+              <!-- Overlapping Element -->
+              <div
+                class="absolute -bottom-8 -right-8 bg-white text-black p-4 rounded-full transform rotate-12 shadow-xl"
+              >
+                <p class="text-lg font-black">COMING SOON</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 md:col-start-7">
+            <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">
+              <span class="block text-yellow-400">"Unfix Yourself"</span>
+              <span class="block text-gray-300 text-2xl mt-2">The Anti-Self-Help Book</span>
+            </h2>
+
+            <p class="text-xl mb-8 text-gray-300">
+              "I'm Dennis—a biologist turned SaaS founder who spent 20 years chasing 'perfect' until I saw through the
+              self-help scam. This book's my take-down of 3-step fixes."
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="bg-red-500 p-2 rounded-full mr-4 mt-1">
+                  <Icon name="tabler:x" class="w-5 h-5" />
+                </div>
+                <p class="text-lg">For entrepreneurs and career switchers who feel stuck or broken—you're not.</p>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-red-500 p-2 rounded-full mr-4 mt-1">
+                  <Icon name="tabler:x" class="w-5 h-5" />
+                </div>
+                <p class="text-lg">
+                  Unfix yourself: drop the lies, decode your mess, and build something real before time's up.
+                </p>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-red-500 p-2 rounded-full mr-4 mt-1">
+                  <Icon name="tabler:x" class="w-5 h-5" />
+                </div>
+                <p class="text-lg">No fluff—just dark, honest lessons from my falls and fights.</p>
+              </div>
+            </div>
+
+            <div class="mt-12">
+              <a
+                href="#notify"
+                class="inline-block px-8 py-4 bg-yellow-400 text-black font-bold text-lg rounded-md transform hover:rotate-2 transition-transform"
+              >
+                Get Notified When It Launches
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section with Intentional Chaos -->
+    <section id="notify" class="py-20 bg-gradient-to-br from-gray-900 to-black text-white relative">
+      <!-- Chaotic Background Elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-[10%] left-[20%] w-64 h-64 bg-purple-800 rounded-full opacity-20 blur-xl"></div>
+        <div class="absolute bottom-[20%] right-[15%] w-80 h-80 bg-red-700 rounded-full opacity-15 blur-xl"></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-black mb-4">
+              <span class="block transform -rotate-1 text-yellow-400">Join the</span>
+              <span class="block transform rotate-1 text-red-500">Anti-Fix Revolution</span>
+            </h2>
+            <p class="text-xl text-gray-300">
+              Get updates, honest insights, and be the first to know when the book launches.
+            </p>
+          </div>
+
+          <div class="bg-white/5 backdrop-blur-sm p-8 rounded-lg border border-white/10 transform -rotate-1">
+            <form class="space-y-6">
+              <div>
+                <label for="email" class="block text-lg font-medium text-gray-300 mb-2">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="your@email.com"
+                  class="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="name" class="block text-lg font-medium text-gray-300 mb-2">First Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your name"
+                  class="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                />
+              </div>
+
+              <div class="pt-4">
+                <button
+                  type="submit"
+                  class="w-full px-6 py-4 bg-gradient-to-r from-red-500 to-yellow-500 text-white font-bold text-lg rounded-md transform hover:-rotate-1 transition-transform"
+                >
+                  I'm Ready for the Truth
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="mt-12 text-center">
+            <p class="text-gray-400 text-sm">No spam, no BS, no 3-step programs. Just real talk when it matters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer with Asymmetrical Design -->
+    <footer class="py-12 bg-black text-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div class="md:col-span-4 md:col-start-2">
+            <h3 class="text-2xl font-bold mb-4 text-yellow-400 transform -rotate-1">Dennis Troeger</h3>
+            <p class="text-gray-400">Decode the Chaos, Live Your Way—Skip the Gurus.</p>
+          </div>
+
+          <div class="md:col-span-3 md:col-start-7">
+            <h4 class="text-lg font-bold mb-4 text-gray-300">Connect</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Twitter</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">LinkedIn</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Instagram</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-3">
+            <h4 class="text-lg font-bold mb-4 text-gray-300">Legal</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Terms of Service</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+          <p class="text-gray-500">
+            &copy; {new Date().getFullYear()} Dennis Troeger. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </main>
+</Layout>
